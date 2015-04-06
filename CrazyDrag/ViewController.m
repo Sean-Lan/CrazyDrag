@@ -81,7 +81,6 @@
 - (IBAction)showAlert:(id)sender {
     int difference = abs(currentValue - targetValue);
     int points = 100 - difference;
-    score += points;
     NSString *title;
     if (difference == 0) {
         title = @"土豪，你太牛逼了！";
@@ -95,6 +94,7 @@
     } else {
         title = @"不是土豪少来装！";
     }
+    score += points;
     NSString *message = [NSString stringWithFormat:@"恭喜高富帅，您的得分是：%d", points];
     [[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"朕知晓了，爱卿辛苦了" otherButtonTitles:nil, nil]show];
 }
