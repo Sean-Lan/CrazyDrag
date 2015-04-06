@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AboutViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController () {
     int currentValue;
@@ -23,6 +24,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *targetLabel;
 @property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutlet UILabel *roundLabel;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 
 @end
 
@@ -32,17 +34,35 @@
 @synthesize targetLabel;
 @synthesize scoreLabel;
 @synthesize roundLabel;
+@synthesize audioPlayer;
+-(void)playBackgroundMusic{
+    NSString *musicPath = [[NSBundle mainBundle]pathForResource:@"no" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:musicPath];
+    NSError *error;
+    
+    audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:url error:&error];
+    audioPlayer.numberOfLoops = -1;
+    if (audioPlayer == nil) {
+        NSString *errorInfo = [NSString stringWithString:[error description]];
+        NSLog(@"the error is%@", errorInfo);
+    } else {
+        [audioPlayer play];
+    }
+}
+
 -(void)updateLabels {
     self.targetLabel.text = [NSString stringWithFormat:@"%d", targetValue];
     self.scoreLabel.text = [NSString stringWithFormat:@"%d", score];
     self.roundLabel.text = [NSString stringWithFormat:@"%d", round];
 }
+
 - (void)startNewRound {
     targetValue = 1 + arc4random()%100;
     currentValue = 50;
     self.slider.value = currentValue;
     ++round;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -61,6 +81,7 @@
     [self.slider setMaximumTrackImage:trackRightImage forState:UIControlStateNormal];
     [self startNewGame];
     [self updateLabels];
+    [self playBackgroundMusic];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,9 +90,17 @@
 }
 
 - (IBAction)startOver:(id)sender {
+    CATransition *transition = [CATransition animation];
+    transition.type = kCATransitionFade;
+    transition.duration = 1;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    
     [self startNewGame];
     [self updateLabels];
+    
+    [self.view.layer addAnimation:transition forKey:nil];
 }
+
 - (void)startNewGame {
     score = 0;
     round = 0;
@@ -109,6 +138,7 @@
     //NSLog(@"滑动条当前的数值是：%f", slider.value);
     currentValue = (int)lround(sender.value);
 }
+
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     [self startNewRound];
     [self updateLabels];
