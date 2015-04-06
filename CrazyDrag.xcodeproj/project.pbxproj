@@ -14,7 +14,6 @@
 		E90E4E4F1ACEC662008C89AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90E4E4E1ACEC662008C89AD /* Images.xcassets */; };
 		E90E4E521ACEC662008C89AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E90E4E501ACEC662008C89AD /* LaunchScreen.xib */; };
 		E90E4E5E1ACEC663008C89AD /* CrazyDragTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E90E4E5D1ACEC663008C89AD /* CrazyDragTests.m */; };
-		E9630EA61AD2365A00F1FF98 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E9630EA51AD2365A00F1FF98 /* README.md */; };
 		E97EEA6C1AD15F10004965AC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E97EEA6A1AD15F10004965AC /* AboutViewController.m */; };
 		E97EEA6D1AD15F10004965AC /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97EEA6B1AD15F10004965AC /* AboutViewController.xib */; };
 		E97EEA781AD16C47004965AC /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = E97EEA6F1AD16C47004965AC /* Background.png */; };
@@ -53,7 +52,6 @@
 		E90E4E571ACEC663008C89AD /* CrazyDragTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrazyDragTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90E4E5C1ACEC663008C89AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E90E4E5D1ACEC663008C89AD /* CrazyDragTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrazyDragTests.m; sourceTree = "<group>"; };
-		E9630EA51AD2365A00F1FF98 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E97EEA691AD15F10004965AC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		E97EEA6A1AD15F10004965AC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		E97EEA6B1AD15F10004965AC /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 		E90E4E351ACEC662008C89AD = {
 			isa = PBXGroup;
 			children = (
-				E9630EA51AD2365A00F1FF98 /* README.md */,
 				E97EEA811AD17323004965AC /* CrazyDrag.html */,
 				E97EEA6E1AD16C47004965AC /* Images */,
 				E90E4E401ACEC662008C89AD /* CrazyDrag */,
@@ -282,7 +279,6 @@
 			files = (
 				E90E4E4A1ACEC662008C89AD /* ViewController.m in Sources */,
 				E90E4E471ACEC662008C89AD /* AppDelegate.m in Sources */,
-				E9630EA61AD2365A00F1FF98 /* README.md in Sources */,
 				E97EEA6C1AD15F10004965AC /* AboutViewController.m in Sources */,
 				E90E4E441ACEC662008C89AD /* main.m in Sources */,
 			);
